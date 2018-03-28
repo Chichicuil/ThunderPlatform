@@ -70,19 +70,19 @@
                                 </div>
                                 <hr/>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Nombre de Usuario">
+                                    <input type="text" id="Nombre"class="form-control" placeholder="Nombre de Usuario">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Tu correo electronico">
+                                    <input type="text" id="Email" class="form-control" placeholder="Tu correo electronico">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Elige una contraseña">
+                                    <input type="password" id="Contraseña" class="form-control" placeholder="Elige una contraseña">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Confirma la contraseña">
+                                    <input type="password" id="Contraseña_Confimarda" class="form-control" placeholder="Confirma la contraseña">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
@@ -107,7 +107,7 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Registrate</button>
+                                        <button type="button" id="SubmitBtn" onclick="SubmitClick()" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Registrate</button>
                                     </div>
                                 </div>
                                 <hr/>
@@ -192,6 +192,20 @@
     <script type="text/javascript" src="../bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
     <script type="text/javascript" src="../bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
     <script type="text/javascript" src="assets/js/common-pages.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCkTyx67fqjJTtpFfli74x_W5owHZvYwuU",
+        authDomain: "thunder-demo.firebaseapp.com",
+        databaseURL: "https://thunder-demo.firebaseio.com",
+        projectId: "thunder-demo",
+        storageBucket: "thunder-demo.appspot.com",
+        messagingSenderId: "813562833961"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>

@@ -28,8 +28,8 @@
     <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.3/firebaseui.css" />
 </head>
 
 <body class="fix-menu">
@@ -174,6 +174,41 @@
     <script type="text/javascript" src="../bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
     <script type="text/javascript" src="../bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
     <script type="text/javascript" src="assets/js/common-pages.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCkTyx67fqjJTtpFfli74x_W5owHZvYwuU",
+        authDomain: "thunder-demo.firebaseapp.com",
+        databaseURL: "https://thunder-demo.firebaseio.com",
+        projectId: "thunder-demo",
+        storageBucket: "thunder-demo.appspot.com",
+        messagingSenderId: "813562833961"
+    };
+    firebase.initializeApp(config);
+    </script>
+        <script type="text/javascript">
+            // FirebaseUI config.
+            var uiConfig = {
+              signInSuccessUrl: 'index.html',
+              signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                firebase.auth.PhoneAuthProvider.PROVIDER_ID
+              ],
+              // Terms of service url.
+              tosUrl: '<your-tos-url>'
+            };
+      
+            // Initialize the FirebaseUI Widget using Firebase.
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+            // The start method will wait until the DOM is loaded.
+            ui.start('#firebaseui-auth-container', uiConfig);
+          </script>
 </body>
 
 </html>
