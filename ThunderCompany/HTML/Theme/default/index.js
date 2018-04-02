@@ -1,9 +1,6 @@
-var Nombre = document.getElementById("Nombre");
-var Email = document.getElementById("Email");
-var Contraseña = document.getElementById("Contraseña");
-var Contraseña_Confimarda = document.getElementById("Contraseña_Confimarda");
-var SubmitBtn = document.getElementById("SubmitBtn");
-function SubmitClick()
-{
-window.alert("Works!");
-}
+firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
